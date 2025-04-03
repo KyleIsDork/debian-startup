@@ -12,6 +12,9 @@ fi
 apt update
 apt install -y fish command-not-found tldr wget curl
 
+# Ensure tldr directory exists to avoid errors
+sudo -u "$CURRENT_USER" mkdir -p /home/"$CURRENT_USER"/.local/share/tldr
+
 # Update tldr cache
 echo "Updating tldr cache..."
 sudo -u "$(logname)" tldr --update
