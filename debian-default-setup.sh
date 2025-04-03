@@ -42,7 +42,7 @@ CONFIG_PATH="/home/$CURRENT_USER/.config/fish/config.fish"
 {
   echo "alias ll='ls -lah'"
   echo "fastfetch"
-  echo "source /etc/fish/command-not-found.fish"
+  echo "set -g fish_greeting 'The time is (set_color yellow)(date +%T)(set_color normal) and this machine is called $hostname'"
 } >> "$CONFIG_PATH"
 
 chown "$CURRENT_USER":"$CURRENT_USER" "$CONFIG_PATH"
