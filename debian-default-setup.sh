@@ -45,6 +45,15 @@ CONFIG_PATH="/home/$CURRENT_USER/.config/fish/config.fish"
   echo "set -g fish_greeting 'The time is (set_color yellow)(date +%T)(set_color normal) and this machine is called $hostname'"
 } >> "$CONFIG_PATH"
 
+cat << 'EOF' >> "$CONFIG_PATH"
+
+function fish_greeting
+    echo Hello friend!
+    echo The time is (set_color yellow)(date +%T)(set_color normal) and this machine is called $hostname
+end
+EOF
+
+
 chown "$CURRENT_USER":"$CURRENT_USER" "$CONFIG_PATH"
 
 echo "Setup complete. Please log out and back in to use fish as your default shell."
