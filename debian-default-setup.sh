@@ -42,7 +42,6 @@ CONFIG_PATH="/home/$CURRENT_USER/.config/fish/config.fish"
 {
   echo "alias ll='ls -lah'"
   echo "fastfetch"
-  echo "set -g fish_greeting 'The time is (set_color yellow)(date +%T)(set_color normal) and this machine is called $hostname'"
 } >> "$CONFIG_PATH"
 
 cat << 'EOF' >> "$CONFIG_PATH"
