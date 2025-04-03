@@ -2,6 +2,14 @@
 
 A simple startup script to configure a clean Debian 12 system with a personalized, modern terminal experience.
 
+# Prerequisites
+
+Install `curl` first.
+
+```bash
+sudo apt install -y curl
+```
+
 ## Features
 
 This script installs and configures the following:
@@ -24,19 +32,17 @@ To run the script on a fresh Debian 12 install, use one of the following command
 ### Using `curl`:
 
 ```bash
-sudo bash <(curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh)
-```
-
-### Using `wget`:
-
-```bash
-sudo bash <(wget -qO- https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh)
+curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh -o setup.sh
+chmod +x setup.sh
+sudo ./setup.sh
 ```
 
 To enhance your fish shell experience with themes and plugins, you can install [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) by passing the `--install-omf` flag:
 
 ```bash
-sudo bash <(curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh) --install-omf`
+curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh -o setup.sh
+chmod +x setup.sh
+sudo ./setup.sh --install-omf`
 ```
 
 ## Notes
