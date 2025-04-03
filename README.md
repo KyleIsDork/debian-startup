@@ -45,6 +45,8 @@ chmod +x setup.sh
 sudo ./setup.sh --install-omf`
 ```
 
+To set fish as your primary shell, append the --default-shell flag to your command.
+
 ## Notes
 
 - After running the script, **log out and log back in** to start using fish as your default shell. If this isn't working, you may need to reboot.

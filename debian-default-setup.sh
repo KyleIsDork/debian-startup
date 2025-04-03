@@ -29,11 +29,6 @@ wget -q "$FF_URL" -O /tmp/fastfetch.deb
 apt install -y /tmp/fastfetch.deb
 rm /tmp/fastfetch.deb
 
-
-# Set fish as default shell for the current user
-CURRENT_USER=$(logname)
-chsh -s /usr/bin/fish "$CURRENT_USER"
-
 # Ensure fish config directory exists
 sudo -u "$CURRENT_USER" mkdir -p /home/"$CURRENT_USER"/.config/fish
 
@@ -52,10 +47,14 @@ function fish_greeting
 end
 EOF
 
-
 chown "$CURRENT_USER":"$CURRENT_USER" "$CONFIG_PATH"
 
-echo "Setup complete. Please log out and back in to use fish as your default shell."
+# Inform the user about the changes
+echo "Setup complete. Please log out and back in to apply changes."
+# Inform the user how to set fish as the default shell
+echo "To set fish as the default shell, run: chsh -s /usr/bin/fish"
+# Inform the user about the tldr command
+echo "To use tldr, run: tldr <command>"
 
 # Optional: Install Oh My Fish for enhanced fish shell experience
 # If the user selected the menu option, install OMF
@@ -63,3 +62,12 @@ if [ "$1" == "--install-omf" ]; then
   sudo -u "$CURRENT_USER" curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
   echo "Oh My Fish installed successfully."
 fi
+
+# If the user flags --default-shell, set fish as the default shell
+if [ "$1" == "--default-shell" ]; then
+  # Set fish as default shell for the current user
+  CURRENT_USER=$(logname)
+  chsh -s /usr/bin/fish "$CURRENT_USER"
+  echo "Fish shell set as default for user $CURRENT_USER."
+fi
+
