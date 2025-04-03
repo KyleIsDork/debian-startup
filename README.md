@@ -23,15 +23,21 @@ To run the script on a fresh Debian 12 install, use one of the following command
 
 ### Using `curl`:
 
-`sudo bash <(curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh)`
+```bash
+sudo bash <(curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh)
+```
 
 ### Using `wget`:
 
-`sudo bash <(wget -qO- https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh)`
+```bash
+sudo bash <(wget -qO- https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh)
+```
 
 To enhance your fish shell experience with themes and plugins, you can install [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) by passing the `--install-omf` flag:
 
-`sudo bash <(curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh) --install-omf`
+```bash
+sudo bash <(curl -sSL https://raw.githubusercontent.com/kyleisdork/debian-startup/main/debian-default-setup.sh) --install-omf`
+```
 
 ## Notes
 
